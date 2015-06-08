@@ -1,10 +1,16 @@
 <template name="channel">
-	<ul>
-		{{#each messages}}
-			<li>
-				{{message}}
-			</li>
-		{{/each}}
-	</ul>
-	{{> home}} <!-- add link to channels in a channel i.e add the home template-->
+    <h1>{{channel.name}}</h1>
+    <ul>
+        {{#each messages}}
+        <li>
+           {{#markdown}}{{{message}}}{{/markdown}}
+        </li>
+        {{/each}}
+    </ul>
+    <!-- message input form -->
+    <form>
+        <textarea rows="1" cols="100"></textarea>
+    </form>
+    {{> home}}
+    <!-- add link to channels in a channel i.e add the home template-->
 </template>
