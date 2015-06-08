@@ -2,17 +2,18 @@
     <h1>{{channel.name}}</h1>
     <ul>
         {{#each messages}}
-         <h2>{{date}}</h2>
+        <h2>{{date}}</h2>
         <li>
-            <div>{{user.emails.[0].address}}  {{time}}</div>
+            <div>{{user.emails.[0].address}} {{time}}</div>
             {{#markdown}}{{{message}}}{{/markdown}}
         </li>
         {{/each}}
     </ul>
-    <!-- message input form -->
     <form>
         <textarea rows="1" cols="100"></textarea>
+        <!-- message input form -->
     </form>
     {{> home}}
     <!-- add link to channels in a channel i.e add the home template-->
+    >>>>>>> step-15
 </template>

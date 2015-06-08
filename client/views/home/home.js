@@ -1,3 +1,4 @@
+<< << << < HEAD
 
 //helper to find all channels in home
 Template.home.helpers({

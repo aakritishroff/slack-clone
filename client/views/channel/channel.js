@@ -24,14 +24,16 @@ Template.channel.helpers({
         return moment(this.timestamp).format('h:mm a');
     },
 
-    date: function(messages) {
+    date: function() {
         var dateNow = moment(this.timestamp).calendar();
         var instance = Template.instance();
         if (!instance.date || instance.date != dateNow) {
             return instance.date = dateNow;
         }
     }
+
 });
+
 
 //event handler to insert message on enter and not on shift when user finishes typing
 Template.channel.events({
@@ -49,5 +51,4 @@ Template.channel.events({
             });
         }
     }
-
 });
