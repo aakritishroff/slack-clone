@@ -1,7 +1,12 @@
 <template name="home">
-  <ul>
-    {{#each channels}}
-    <li>{{name}}</li>
-    {{/each}}
-  </ul>
+	<form>
+		<label for="name">Channel name:</label>
+    	<input id="name" type="text">
+    	<button type="submit">Add</button>
+	</form>
+    <ul>
+        {{#each channels}}
+        <li><a href="/channel/{{_id}}">{{name}}</a></li> <!--takes id from routes-->
+        {{/each}}
+    </ul>
 </template>
