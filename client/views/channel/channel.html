@@ -2,8 +2,10 @@
     <h1>{{channel.name}}</h1>
     <ul>
         {{#each messages}}
+         <h2>{{date}}</h2>
         <li>
-           {{#markdown}}{{{message}}}{{/markdown}}
+            <div>{{user.emails.[0].address}}  {{time}}</div>
+            {{#markdown}}{{{message}}}{{/markdown}}
         </li>
         {{/each}}
     </ul>
