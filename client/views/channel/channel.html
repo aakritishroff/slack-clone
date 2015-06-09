@@ -1,19 +1,27 @@
 <template name="channel">
-    <h1>{{channel.name}}</h1>
-    <ul>
-        {{#each messages}}
-        <h2>{{date}}</h2>
-        <li>
-           <div>{{user.username}} {{time}}</div>
-            {{#markdown}}{{{message}}}{{/markdown}}
-        </li>
-        {{/each}}
-    </ul>
-    <form>
-        <textarea rows="1" cols="100"></textarea>
-        <!-- message input form -->
-    </form>
-    {{> home}}
-    <!-- add link to channels in a channel i.e add the home template-->
-    >>>>>>> step-15
+  {{#contentFor 'header'}}
+  <h1>{{channel.name}}</h1>
+  {{/contentFor}}
+
+  <ul>
+    {{#each messages}}
+    <h2>{{date}}</h2>
+    <li>
+      <div>{{user.username}} {{time}}</div>
+      {{#markdown}}{{{message}}}{{/markdown}}
+    </li>
+    {{/each}}
+  </ul>
+
+  {{#contentFor 'footer'}}
+  {{> messageForm}}
+  {{/contentFor}}
+
+  {{> home}}
+</template>
+
+<template name="messageForm">
+  <form>
+    <textarea rows="1" cols="100"></textarea>
+  </form>
 </template>

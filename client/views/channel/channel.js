@@ -1,10 +1,10 @@
 Template.channel.onCreated(function() {
-  var instance = this;
-  // Listen for changes to reactive variables (such as Router.current()).
-  instance.autorun(function() {
-    var channel = Router.current().params._id;
-    instance.subscribe('messages', channel);
-  });
+    var instance = this;
+    // Listen for changes to reactive variables (such as Router.current()).
+    instance.autorun(function() {
+        var channel = Router.current().params._id;
+        instance.subscribe('messages', channel);
+    });
 });
 
 //helper to find channel name from collection
@@ -45,7 +45,8 @@ Template.channel.helpers({
 
 
 //event handler to insert message on enter and not on shift when user finishes typing
-Template.channel.events({
+//Template.channel.events({
+Template.messageForm.events({
     'keyup textarea': function(event, instance) {
         if (event.keyCode == 13 && !event.shiftKey) { // Check if enter was pressed (but without shift).
             var _id = Router.current().params._id;
