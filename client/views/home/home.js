@@ -1,3 +1,9 @@
+Template.home.onCreated(function() {
+  this.subscribe('channels');
+  this.subscribe('allUserNames');
+});
+
+
 //helper to find all channels in home
 Template.home.helpers({
     channels: function() {

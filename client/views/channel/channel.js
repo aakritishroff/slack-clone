@@ -1,3 +1,12 @@
+Template.channel.onCreated(function() {
+  var instance = this;
+  // Listen for changes to reactive variables (such as Router.current()).
+  instance.autorun(function() {
+    var channel = Router.current().params._id;
+    instance.subscribe('messages', channel);
+  });
+});
+
 //helper to find channel name from collection
 Template.channel.helpers({
     messages: function() {
